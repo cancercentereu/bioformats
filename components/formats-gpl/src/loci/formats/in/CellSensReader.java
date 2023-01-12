@@ -673,7 +673,7 @@ public class CellSensReader extends FormatReader {
         if (pixelsFiles != null) {
           Arrays.sort(pixelsFiles);
           for (String pixelsFile : pixelsFiles) {
-            if (checkSuffix(pixelsFile, "ets")) {
+            if (checkSuffix(pixelsFile, "ets") && !pixelsFile.startsWith("blob_")) {
               files.add(new Location(stackDir, pixelsFile).getAbsolutePath());
             }
           }
